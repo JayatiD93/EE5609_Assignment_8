@@ -1,0 +1,269 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\usepackage{setspace}
+\usepackage{gensymb}
+%\doublespacing
+\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+%\usepackage{iithtlc}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+%\lstset{
+%language=tex,
+%frame=single, 
+%breaklines=true
+%}
+
+\begin{document}
+%
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+
+
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+%\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+\renewcommand{\thefigure}{\theproblem}
+%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
+%\counterwithin{equation}{enumi}
+
+
+%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+
+\vspace{3cm}
+
+
+\title{Assignment 8}
+\author{Jayati Dutta}
+
+
+
+
+
+% make the title area
+\maketitle
+
+\newpage
+
+%\tableofcontents
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+%\renewcommand{\theequation}{\theenumi}
+
+
+\begin{abstract}
+This is a simple document explaining how to determine the nullspace solution from the Row Reduced Echelon Form of a coefficient matrix.
+\end{abstract}
+
+%Download all python codes 
+%
+%\begin{lstlisting}
+%svn co https://github.com/JayatiD93/trunk/My_solution_design/codes
+%\end{lstlisting}
+
+Download all and latex-tikz codes from 
+%
+\begin{lstlisting}
+svn co https://github.com/gadepall/school/trunk/ncert/geometry/figs
+\end{lstlisting}
+%
+
+
+\section{Problem}
+Find all solutions to the following system of equations by row-reducing the co-efficient matrix:
+\begin{align}
+\frac{1}{3}x_1 +2x_2 - 6x_3 =0\\
+-4x_1\quad \quad+ 5x_3=0\\
+-3x_1+6x_2-13x_3=0\\
+-\frac{7}{3}x_1 +2x_2 - \frac{8}{3}x_3 =0
+\end{align}
+
+
+\section{Explanation}
+The coefficient matrix is:
+\begin{align}
+A=\myvec{\frac{1}{3} & 2 & -6\\-4 & 0 & 5\\-3 & 6 & -13\\-\frac{7}{3} & 2 & -\frac{8}{3}}
+\end{align}
+The number of rows of this coefficient matrix is $m$ = 4 and the number of columns is $n$= 3, So in this case, $n<m$.
+Now the row operations are:
+\begin{align}
+\myvec{\frac{1}{3} & 2 & -6\\-4 & 0 & 5\\-3 & 6 & -13\\-\frac{7}{3} & 2 & -\frac{8}{3}}\xleftrightarrow[R_1\leftarrow R_1\times3]{R_4\leftarrow R_4\times3}
+\myvec{1 & 6 & -18\\-4 & 0 & 5\\-3 & 6 & -13\\-7 & 6 & -8}\\
+\xleftrightarrow[]{R_3\leftarrow R_2+R_3}
+\myvec{1 & 6 & -18\\-4 & 0 & 5\\-7 & 6 & -8\\-7 & 6 & -8}\xleftrightarrow[]{R_4\leftarrow R_4-R_3}\\
+\myvec{1 & 6 & -18\\-4 & 0 & 5\\-7 & 6 & -8\\0 & 0 & 0}\xleftrightarrow[R_3\leftarrow R_3+7R_1]{R_2\leftarrow R_2+4R_1}
+\myvec{1 & 6 & -18\\0 & 24 & -67\\0 & 48 & -138\\0 & 0 & 0}\\
+\xleftrightarrow[]{R_3\leftarrow R_3/2}\myvec{1 & 6 & -18\\0 & 24 & -67\\0 & 24 & -69\\0 & 0 & 0}\xleftrightarrow[]{R_3\leftarrow R_3-R_2}\\
+\myvec{1 & 6 & -18\\0 & 24 & -67\\0 & 0 & -2\\0 & 0 & 0}\xleftrightarrow[]{R_3\leftarrow \frac{R_3}{(-2)}}
+\myvec{1 & 6 & -18\\0 & 24 & -67\\0 & 0 & 1\\0 & 0 & 0}\\
+\xleftrightarrow[]{R_2\leftarrow \frac{R_2}{4}}
+\myvec{1 & 6 & -18\\0 & 6 & -\frac{67}{4}\\0 & 0 & 1\\0 & 0 & 0}\xleftrightarrow[]{R_1\leftarrow R_1-R_2}\\
+\myvec{1 & 0 & -\frac{5}{4}\\0 & 6 & -\frac{67}{4}\\0 & 0 & 1\\0 & 0 & 0}\xleftrightarrow[]{R_2\leftarrow \frac{R_2}{6}}
+\myvec{1 & 0 & -\frac{5}{4}\\0 & 1 & -\frac{67}{24}\\0 & 0 & 1\\0 & 0 & 0}\\
+\xleftrightarrow[R_1\leftarrow R_1+\frac{5R_3}{4}]{R_2\leftarrow R_2+\frac{67R_3}{24}}
+\myvec{1 & 0 & 0\\0 & 1 & 0\\0 & 0 & 1\\0 & 0 & 0}
+\end{align}
+Now the coefficient matrix $A$ can be written as row reduced matrix $R$ and $R$ can be expressed as:
+\begin{align}
+R = \myvec{I\\0}
+\end{align}
+
+Now the rank of the matrix $A$ is $\rho$ = 3 =$n$, so the coefficient matrix has the full column rank. $\rho$ = 3 =$n$,this implies that the solution may or may not exist. But as $\rho = n < m$, so if solution exists then it will be either 1 or 0.
+
+Now,
+\begin{align}
+\myvec{1 & 0 & 0\\0 & 1 & 0\\0 & 0 & 1\\0 & 0 & 0} \myvec{x_1\\x_2\\x_3} = \myvec{0\\0\\0\\0}\\
+\implies x_1 = 0\\
+x_2 = 0\\
+x_3=0\\
+\end{align}
+
+As $x_1$,$x_2$ and $x_3$ all are pivot variables, but $x_1 = x_2 = x_3$ =0
+%\renewcommand{\theequation}{\theenumi}
+%\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+%\numberwithin{equation}{enumi}
+%\item Verification of the above problem using python code.\\
+%\solution The  following Python code generates Fig. \ref{fig:hyperbola}
+%\begin{lstlisting}
+%codes/hyperbola_3.py
+%\end{lstlisting}
+%%
+%\end{enumerate}
+
+\end{document}
+
+
+
