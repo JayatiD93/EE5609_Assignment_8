@@ -243,14 +243,19 @@ A\vec{x} = \myvec{1 & 0 & 0\\0 & 1 & 0\\0 & 0 & 1\\0 & 0 & 0}\myvec{x_1\\x_2\\x_
 
 %Now the rank of the matrix $A$ is $\rho$ = 3 =$n$, so the coefficient matrix has the full column rank. $\rho$ = 3 =$n$,this implies that the solution may or may not exist. But as $\rho = n < m$, so if solution exists then it will be either 1 or 0.
 
-Now,
+So,
 \begin{align}
-\myvec{1 & 0 & 0\\0 & 1 & 0\\0 & 0 & 1\\0 & 0 & 0} \myvec{x_1\\x_2\\x_3} = \myvec{0\\0\\0\\0}\\
-\implies x_1 = 0\\
-x_2 = 0\\
-x_3=0\\
+1 x_1 + 0 x_2 + 0 x_3 = 0\\
+0 x_1 + 1 x_2 + 0 x_3 = 0\\
+0 x_1 + 0 x_2 + 1 x_3 = 0
 \end{align}
-As the coefficient matrix is invertible , so $\vec{x}$ = $\vec{0}$.
+The coefficient matrix for these equations is: $\myvec{1 & 0 & 0\\0 & 1 & 0\\0 & 0 & 1}$ = $I_3$ and it is invertible.
+
+As the coefficient matrix is invertible , so
+\begin{align}
+\vec{I_3} \vec{x} = \vec{0}\\
+\implies \vec{x}= \vec{0}
+\end{align} 
 %\renewcommand{\theequation}{\theenumi}
 %\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
 %\numberwithin{equation}{enumi}
